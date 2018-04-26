@@ -77,7 +77,7 @@ public class U3A2PasswordFrame extends javax.swing.JFrame {
             }
         });
 
-        outputLable.setFont(new java.awt.Font("kor_boot", 0, 24)); // NOI18N
+        outputLable.setFont(new java.awt.Font("AbcCursive", 0, 24)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -162,15 +162,16 @@ public class U3A2PasswordFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_usernameInputActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String username, password, passwordChar;
-        double passwordLength;
-        username= usernameInput.getText();
-        password= passwordInput.getText();
+        String username, password;
+        double passwordLength, passwordEnd;
+        username= usernameInput.getText().toLowerCase();
+        password= passwordInput.getText().toLowerCase();
         passwordLength= password.length();
+        passwordEnd=Math.ceil(Math.random()*100);
         if (passwordLength<8){
             outputLable.setText("add more plz D:");
         }else
-        outputLable.setText(username + "'s password is " + password);
+        outputLable.setText(username + "'s password is " + password+Double.toString(passwordEnd));
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void passwordInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordInputActionPerformed
